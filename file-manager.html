@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Online File Manager</title>
+	<link rel="stylesheet" type="text/css" href="file-manager.css">
+</head>
+<body>
+	<div class="file-manager">
+        <div class="file-manager-header">
+        	<h2>Online File Manager</h2>
+        </div>
+        <div class="file-manager-popbox">
+        	<div class="file-manager-popbox-header">
+        		<h3>Upload File</h3>
+        		<button onclick="closeModal()">&times;</button>
+        	</div>
+        	<div class="progress">
+    			<div class="progressbar">
+    				<span class="tooltip">50%</span>
+    			</div>
+    		</div>
+        	<div class="file-manager-popbox-body">
+        		<br><br><br>
+        		<center>
+        			<form id="upload_file" method="POST" enctype="multipart/form-data">
+	        			<input type="file" name="file" id="file" required/>
+	        			<button type="button" onclick="uploadFile()">Upload</button>
+	        		</form>
+	        		<br><br>
+	        		<p class="status"></p>
+        		</center>        		
+        	</div>
+        </div>
+        <div class="file-manager-header-panel">
+        	<button>New File</button>
+        	<button>New Folder</button>
+        	<button onclick="openModal()">Upload File</button>
+        </div>
+        <div class="file-manager-body">
+            <div class="left-panel">
+            </div>
+            <div class="right-panel">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Size</th>
+                        <th>Date</th>
+                    </tr>
+                    <tr>
+                        <td>This is a file name</td>
+                        <td>23.60 KB</td>
+                        <td>12 jun 2020</td>
+                    </tr>
+                    <tr>
+                        <td>This is a file name</td>
+                        <td>23.60 KB</td>
+                        <td>12 jun 2020</td>
+                    </tr>
+                    <tr>
+                        <td>This is a file name</td>
+                        <td>23.60 KB</td>
+                        <td>12 jun 2020</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+    	function _(el){
+    		return document.querySelector(el);
+    	}
+    	function openModal(){
+    		_('.file-manager-popbox').style.display = 'block';
+    	}
+    	function closeModal(){
+    		_('.file-manager-popbox').style.display = 'none';
+    	}
+    </script>
+</body>
+</html>
